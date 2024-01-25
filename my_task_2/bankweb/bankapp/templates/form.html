@@ -1,0 +1,19 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+        <script type="text/javascript" src="{% static 'js/bank_form.js' %}"></script>
+
+    <title>Bank Form</title>
+</head>
+<body>
+    <form method="post" action="{% url 'regapp:form' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+         <button><a href="{% url 'regapp:message' %}">Submit</a></button>
+
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,32 @@
+
+{% block content %}
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login page</title>
+</head>
+<body>
+
+<h1>Login Page</h1>
+    <div id="loginPage">
+<form action="{% url 'regapp:login' %}" method="post">
+    {% csrf_token %}
+        {{ form }}
+   <p> username</p>
+    <input style="padding:10px; max-width: 400px; width: 75%;textalign:center;" type="text" name="username" required placeholder="enter username"><br><br>
+    <p>password</p>
+    <input style="padding:10px; width: 75%;max-width: 400px;"  type="password" name="password" required placeholder="enter password"><br><br>
+<button type="submit">Submit</button>
+      <a href="{% url 'regapp:register' %}">Register</a>
+
+
+</form>
+</body>
+{% endblock %}
+
+</html>

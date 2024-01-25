@@ -1,0 +1,35 @@
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration form</title>
+</head>
+<body>
+
+<h1>registration form</h1>
+    <div id="loginPage">
+<form action="register" method="post">
+    {% csrf_token %}
+    {{ form }}
+
+   <p> username</p>
+    <input style="padding:10px; max-width: 400px; width: 75%;textalign:center;" type="text" name="username" required placeholder="enter username"><br><br>
+    <p>password</p>
+    <input style="padding:10px; width: 75%;max-width: 400px;"  type="password" name="password" required placeholder="enter password"><br><br>
+    <p>conform password</p>
+    <input style="padding:10px; width: 75%;max-width: 400px;"  type="password" name="password1" required placeholder=" re-enter password"><br><br>
+<button type="submit">Submit</button>
+      <a href="{% url 'regapp:login' %}">Register</a>
+
+
+
+</form>
+        {% for msg in messages %}
+<h2>{{msg}}</h2>
+{% endfor %}
+</body>
+{% endblock %}
+
+</html>
